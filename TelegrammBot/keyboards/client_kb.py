@@ -15,6 +15,7 @@ b9 = KeyboardButton(text='/Log_4_1')
 b10 = KeyboardButton(text='/Data_prep_4_2')
 b11 = KeyboardButton(text='/Stat_5')
 b12 = KeyboardButton(text='/Classic_CV_6')
+b13 = KeyboardButton(text='/PyTorch_7')
 
 
 kb_client = ReplyKeyboardMarkup(resize_keyboard=True,
@@ -27,4 +28,4 @@ kb_client.add(b1).add(b2).insert(b3)  # .b2 итд, kb_client.row(b1, b2, b3) - 
 
 kb_client_2.add(b4).insert(b5).add(b6).insert(b7)
 
-kb_client_3.row(b8, b9, b10).row(b11, b12).add(b7)
+kb_client_3.row(b8, b9, b10).row(b11, b12, b13).add(b7)

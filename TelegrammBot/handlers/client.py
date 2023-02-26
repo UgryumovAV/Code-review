@@ -235,6 +235,31 @@ async def command_Classic_CV(message: types.message):
     await message.delete()
 
 
+# PyTorch_7
+async def command_PyTorch(message: types.message):
+    await bot.send_message(message.from_user.id,
+                           'PyTorch\n'
+                           '\n'
+                           '1. Делаем ДЗ из ноутбука, который разбирали на семинаре.\n'
+                           '2. Читаем статейки и смотрим видосы по ссылкам в ноутбуке.\n'
+                           '3. Переписываем пример из ноутбука с cifar10 в виде репозитория '
+                           '(p. s. если вдруг уже писали свои пайплайны, можно переиспользовать свои наработки). '
+                           'К семинару в субботу будет с чем сравнить. Постарайтесь обойтись без использования '
+                           'Catalyst, Lightning, Ignite. Пайплайн можно писать любой сложности)\n'
+                           'И не забывайте про тайпхинты, книга в помощь: https://to.digital/typed-python/\n'
+                           '\n'
+                           'Руководитель:\n'
+                           'Коростелев Дмитрий Сергеевич\n'
+                           'd.korostelev@cft.ru\n'
+                           '\n'
+                           'Материалы:\n'
+                           'https://cloud.mail.ru/public/Pxfe/8je945Gb1\n'
+                           '\n'
+                           'Дедлайн - 04.03',
+                           reply_markup=kb_client)
+    await message.delete()
+
+
 # Материалы
 async def command_materials(message: types.message):
     await bot.send_message(message.from_user.id,
@@ -264,6 +289,15 @@ async def command_materials(message: types.message):
                            '\n'
                            '20230218 занятие 9 схемы кроссвалидаций, оценка качества моделей \n'
                            'https://cloud.mail.ru/public/ftf1/WWgnC81u7\n'
+                           '\n'
+                           '20230221 занятие 10 CNN RNN \n'
+                           'https://cloud.mail.ru/public/AJgt/5b3pRXSLA\n'
+                           '\n'
+                           '20230222 занятие 11 метрики CV \n'
+                           'https://cloud.mail.ru/public/71Zc/zC5qM6N65\n'
+                           '\n'
+                           '20230225 занятие 12 PyTorch Autograd Dataset Dataloader \n'
+                           'https://cloud.mail.ru/public/Pxfe/8je945Gb1\n'
                            '\n',
                            )
     await message.delete()
@@ -410,6 +444,16 @@ async def give_contact(message: types.message):
                            'i.tjumentseva@cft.ru\n'
                            'Новосибирск\n'
                            '\n'
+                           'Лунёв Михаил Юрьевич\n'
+                           'Ведущий дата аналитик\n'
+                           'm.lunjov@cft.ru\n'
+                           'Новосибирск\n'
+                           '\n'
+                           'Коростелев Дмитрий Сергеевич\n'
+                           'Ведущий специалист по компьютерному зрению\n'
+                           'd.korostelev@cft.ru\n'
+                           'Новосибирск\n'
+                           '\n'
                            )  # reply_markup=ReplyKeyboardRemove - удаляет клавиатуру
 
 
@@ -426,4 +470,5 @@ def register_handlers_client(dp: Dispatcher):
     dp.register_message_handler(command_Data_prep_4_2, commands=['Data_prep_4_2'])
     dp.register_message_handler(command_Stat_5, commands=['Stat_5'])
     dp.register_message_handler(command_Classic_CV, commands=['Classic_CV_6'])
+    dp.register_message_handler(command_PyTorch, commands=['PyTorch_7'])
 
