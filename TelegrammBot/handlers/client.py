@@ -260,6 +260,33 @@ async def command_PyTorch(message: types.message):
     await message.delete()
 
 
+# Rep_8
+async def command_Rep(message: types.message):
+    await bot.send_message(message.from_user.id,
+                           'Repository\n'
+                           '\n'
+                           '1. Возьмите свой пайплайн с вступительного соревнования и переведите в  '
+                           'проект на gitlab. Проект должен иметь структуру, быть логически поделён на блоки. '
+                           'Максимально упростить запуск, воспроизведение результатов.\n\n2. Необходимо '
+                           'подключить любой логгер, результаты которого можно смотреть в браузере '
+                           '(например, https://wandb.ai/) для записи результатов экспериментов.\n\n'
+                           '3. Провести эксперименты с разными значениями гиперпараметров. Логгировать '
+                           'всё, что необходимо для воспроизведения.\n\nБудет провериться не скор '
+                           'итоговой модели, а подход при улучшении - опишите почему в результате '
+                           'экспериментов вы считаете эти параметры лучшими.\n'
+                           '\n'
+                           'Руководитель:\n'
+                           'Макаров Александр Владиленович\n'
+                           'alek.makarov@cft.ru\n'
+                           '\n'
+                           'Материалы:\n'
+                           'https://cloud.mail.ru/public/Atd8/ZnqgP7yrQ\n'
+                           '\n'
+                           'Дедлайн - 11.03',
+                           reply_markup=kb_client)
+    await message.delete()
+
+
 # Материалы
 async def command_materials(message: types.message):
     await bot.send_message(message.from_user.id,
@@ -298,6 +325,15 @@ async def command_materials(message: types.message):
                            '\n'
                            '20230225 занятие 12 PyTorch Autograd Dataset Dataloader \n'
                            'https://cloud.mail.ru/public/Pxfe/8je945Gb1\n'
+                           '\n'
+                           '20230302 занятие 13 Attention и трансформеры \n'
+                           'https://cloud.mail.ru/public/r6FL/Vuva8jiQD\n'
+                           '\n'
+                           '20230303 занятие 14 Продвинутая классификация и бэкбоуны \n'
+                           'https://cloud.mail.ru/public/u6Vw/KrrWbRJmW\n'
+                           '\n'
+                           '20230304 занятие 15 Продвинутый пайплайн в репозитории \n'
+                           'https://cloud.mail.ru/public/Atd8/ZnqgP7yrQ\n'
                            '\n',
                            )
     await message.delete()
@@ -352,12 +388,12 @@ async def command_sched(message: types.message):
                            'Тензоры в Pytorch Autograd. \nКлассы Dataset и Dataloader в Pytorch '
                            '(на примере классификации). \nДомашнее задание \nДедлайн 04.03.2023\n'
                            '\n'
-                           '28.02.2023 вторник \n19:00 - 21:00 \nПродвинутая Классификация: \n'
-                           'Бэкбоуны (Resnet, Effnet, ConvNext), лоссы и трюки. \nДомашнее задание \n'
-                           'Дедлайн 07.03.2023\n'
-                           '\n'
                            '02.03.2023 четверг \n19:00 - 21:00 \nAttention и '
                            'архитектуры трансформеров в CV. \n'
+                           '\n'
+                           '03.03.2023 вторник \n19:00 - 21:00 \nПродвинутая Классификация: \n'
+                           'Бэкбоуны (Resnet, Effnet, ConvNext), лоссы и трюки. \nДомашнее задание \n'
+                           'Дедлайн 10.03.2023\n'
                            '\n'
                            '04.03.2023 суббота \n12:00 - 14:00 \nПродвинутый пайплайн в репозитории. \n'
                            'Бэкбоны, лосы, mixed precision, WandB, git. \n'
@@ -454,6 +490,11 @@ async def give_contact(message: types.message):
                            'd.korostelev@cft.ru\n'
                            'Новосибирск\n'
                            '\n'
+                           'Макаров Александр Владиленович\n'
+                           'Ведущий специалист по компьютерному зрению\n'
+                           'alek.makarov@cft.ru\n'
+                           'Новосибирск\n'
+                           '\n'
                            )  # reply_markup=ReplyKeyboardRemove - удаляет клавиатуру
 
 
@@ -471,4 +512,4 @@ def register_handlers_client(dp: Dispatcher):
     dp.register_message_handler(command_Stat_5, commands=['Stat_5'])
     dp.register_message_handler(command_Classic_CV, commands=['Classic_CV_6'])
     dp.register_message_handler(command_PyTorch, commands=['PyTorch_7'])
-
+    dp.register_message_handler(command_Rep, commands=['Rep_8'])
