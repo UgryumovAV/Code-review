@@ -287,6 +287,35 @@ async def command_Rep(message: types.message):
     await message.delete()
 
 
+# YoLO_9
+async def command_YoLO(message: types.message):
+    await bot.send_message(message.from_user.id,
+                           'YoLO\n'
+                           '\n'
+                           'Задание 1: \n'
+                           'Датасет: https://www.kaggle.com/datasets/sshikamaru/car-object-detection\n'
+                           'Обучить и протестировать модель ипользуя yolov5, и экспортнуть в tflite, onnx\n'
+                           'Скрипт должен быть самодостаточным (не надо перекладывать файлики руками и т д)\n\n'
+                           '*Задание: \nОбновить Yolov5 архитектуру - добавив сегментационную голову\n\nРесурсы:'
+                           '\nhttps://learnopencv.com/yolov5-instance-segmentation/\nhttps://netron.app/ - '
+                           'просмотр модели\nhttps://pub.towardsai.net/yolov5-m-implementation-from-scratch-'
+                           'with-pytorch-c8f84a66c98b \nhttps://machinelearningmastery.com/how-to-use-test-'
+                           'time-augmentation-to-improve-model-performance-for-image-classification/?__cf_chl_tk'
+                           '=SE1YQX3GYwmoPO3XEYHvSFMgSpm5pF_LzrL4p1vWZIc-1678512874-0-gaNycGzNDXs\n'
+                           'https://richzhang.github.io/antialiased-cnns/\n'
+                           '\n'
+                           'Руководитель:\n'
+                           'Коростелев Дмитрий Сергеевич\n'
+                           'd.korostelev@cft.ru\n'
+                           '\n'
+                           'Материалы:\n'
+                           'https://cloud.mail.ru/public/mbDM/BCjowksbd\n'
+                           '\n'
+                           'Дедлайн - 18.03',
+                           reply_markup=kb_client)
+    await message.delete()
+
+
 # Материалы
 async def command_materials(message: types.message):
     await bot.send_message(message.from_user.id,
@@ -334,7 +363,17 @@ async def command_materials(message: types.message):
                            '\n'
                            '20230304 занятие 15 Продвинутый пайплайн в репозитории \n'
                            'https://cloud.mail.ru/public/Atd8/ZnqgP7yrQ\n'
-                           '\n',
+                           '\n'
+                           '20230307 занятие 16 Сегментация \n'
+                           'https://cloud.mail.ru/public/Xz9Q/D5pxAC3JE\n'
+                           '\n'
+                           '20230309 занятие 17 Детекция multishot single shot \n'
+                           'https://cloud.mail.ru/public/R74W/DVCup8Dp6\n'
+                           '\n'
+                           '20230311 занятие 18 YoLOv5 сегментация \n'
+                           'https://cloud.mail.ru/public/mbDM/BCjowksbd\n'
+                           '\n'
+                           ,
                            )
     await message.delete()
 
@@ -513,3 +552,4 @@ def register_handlers_client(dp: Dispatcher):
     dp.register_message_handler(command_Classic_CV, commands=['Classic_CV_6'])
     dp.register_message_handler(command_PyTorch, commands=['PyTorch_7'])
     dp.register_message_handler(command_Rep, commands=['Rep_8'])
+    dp.register_message_handler(command_YoLO, commands=['YoLOv5_9'])
