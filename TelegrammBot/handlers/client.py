@@ -316,6 +316,32 @@ async def command_YoLO(message: types.message):
     await message.delete()
 
 
+# metric-learning
+async def command_metric_learning(message: types.message):
+    await bot.send_message(message.from_user.id,
+                           'metric-learning\n'
+                           '\n'
+                           'Используйте metric-learning для классификации на датасете '
+                           'Fruits and Vegetables Image Recognition Dataset | Kaggle\n'
+                           'https://www.kaggle.com/datasets/kritikseth/fruit-and-vegetable-'
+                           'image-recognition\n\nВыберите метрики для оценки результата\n\n'
+                           'Проведите эксперименты с различными loss функциями из лекции.\n'
+                           'Примените остальные знания из курса.\n\nСоздайте отчет об экспериментах,'
+                           ' опишите свой подход и эксперименты.\n\nОтдельным репозиторием. '
+                           'Но MR нужен обязательно, без него не сможем проверить!\n'
+                           '\n'
+                           'Руководитель:\n'
+                           'Лекомцев Александр Михайлович\n'
+                           'a.lekomtsev@cft.ru\n'
+                           '\n'
+                           'Материалы:\n'
+                           'https://cloud.mail.ru/public/kp4E/RkSM2fEJy\n'
+                           '\n'
+                           'Дедлайн - 20.03',
+                           reply_markup=kb_client)
+    await message.delete()
+
+
 # Материалы
 async def command_materials(message: types.message):
     await bot.send_message(message.from_user.id,
@@ -372,6 +398,9 @@ async def command_materials(message: types.message):
                            '\n'
                            '20230311 занятие 18 YoLOv5 сегментация \n'
                            'https://cloud.mail.ru/public/mbDM/BCjowksbd\n'
+                           '\n'
+                           '20230314 занятие 19 From Softmax to ArcFace \n'
+                           'https://cloud.mail.ru/public/kp4E/RkSM2fEJy\n'
                            '\n'
                            ,
                            )
@@ -553,3 +582,4 @@ def register_handlers_client(dp: Dispatcher):
     dp.register_message_handler(command_PyTorch, commands=['PyTorch_7'])
     dp.register_message_handler(command_Rep, commands=['Rep_8'])
     dp.register_message_handler(command_YoLO, commands=['YoLOv5_9'])
+    dp.register_message_handler(command_metric_learning, commands=['metric_learning_10'])
